@@ -14,9 +14,6 @@ db = client[os.getenv("DB_NAME")]
 # connect to news collection in the DB
 news = db[os.getenv("NEWS_COLLECTION_NAME")]
 
-# connect to users collection in the DB
-news = db[os.getenv("NEWS_COLLECTION_NAME")]
-
 def process_language_news(lang, scraper, analyzer):
     news_list = scraper.fetch_news(lang)
     for news in news_list:
