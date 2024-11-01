@@ -2,7 +2,7 @@ name: execute scraping and database loading
 
 on:
   schedule:
-    - cron: '03 12 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   build:
