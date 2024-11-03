@@ -12,7 +12,10 @@ def dept_classifier(news_title):
     model = genai.GenerativeModel('gemini-1.5-flash')
     try:
         response = model.generate_content(query)
-        return response.text
+        if response and response.candidates:
+            return response.candidates[0].content.parts[0].text
+        else:
+            return "controversial"
     except Exception as e:
         print(f"Error during classification: {e}")
         return "controversial"
